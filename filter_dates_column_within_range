@@ -1,0 +1,19 @@
+Sub DueDate()
+Dim within
+
+WithinRange = InputBox("Enter date range in days")                                                                  'Select range relative to today " - number of days / + number of days"
+
+If IsNumeric(within) Then
+    For Each cell In ActiveSheet.Range("A2", ActiveSheet.Cells(Rows.Count, "A").End(xlUp))                          ' Target column is column A
+       If Not (IsDate(cell.Value) And cell.Value <= Date + WithinRange And cell.Value >= Date - WithinRange) Then
+            cell.EntireRow.Hidden = True
+       End If
+    Next cell
+Else
+    MsgBox ("Sorry, your input needs to be an integer 'Number of days'")
+End If
+End Sub
+
+' Could be replacable with the fomula 
+' =IF(($A2<=TODAY()+$R$1)*AND($A2>=TODAY()-$R$1);"Y";"N")                                                           ' A is the dates column $R$1 is the cell where the number of days is set
+
