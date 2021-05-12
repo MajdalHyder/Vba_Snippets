@@ -1,5 +1,5 @@
 Sub DueDate()
-Dim within
+Dim WithinRange
 
 WithinRange = InputBox("Enter date range in days")                                                                  'Select range relative to today " - number of days / + number of days"
 
