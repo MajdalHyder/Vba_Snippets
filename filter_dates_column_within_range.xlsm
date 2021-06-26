@@ -14,6 +14,6 @@ Else
 End If
 End Sub
 
-' Could be replacable with the fomula 
+' Could be replaced with the fomula 
 ' =IF(($A2<=TODAY()+$R$1)*AND($A2>=TODAY()-$R$1);"Y";"N")                                                           ' A is the dates column $R$1 is the cell where the number of days is set
 
